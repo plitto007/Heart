@@ -74,24 +74,35 @@
 </head>
 <!-- self create by LTP, fix viewport on mobile -->
 
-<body>
+<body style="width: 100%;height: 100%;">
+  <div> <img style=" width: 100%; height: 100%; object-fit: fill;" src="image.jpg" /></div>
   <canvas id="particles"> </canvas>
   <canvas id="text"> </canvas>
+  <audio id="play_song">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
   <!-- self create by LTP, fix viewport on mobile -->
+  <script>
+    document.addEventListener('click', musicPlay);
+    function musicPlay() {
+      document.getElementById('play_song').play();
+      document.removeEventListener('click', musicPlay);
+    }
+  </script>
   <script>
     var settings = {
       particles: {
-        length: 400, // maximum amount of particles
+        length: 4000, // maximum amount of particles
         duration: 2, // particle duration in sec
-        velocity: 100, // particle velocity in pixels/sec
-        effect: -0.85, // play with this for a nice effect
-        size: 25, // particle size in pixels
-        color: "#ea80b0", // color of particles
+        velocity: 80, // particle velocity in pixels/sec
+        effect: -2, // play with this for a nice effect
+        size: 10, // particle size in pixels
+        color: "#f10706", // color of particles
       },
       text: {
-        font: "25px Arial", // font text
-        color: "#ea80b0", // color of text
-        content: "Thiên Phong", // text content
+        font: "bold   25px Arial", // font text
+        color: "#2596be", // color of text
+        content: "To my Baby Tiger", // text content
       }
     };
 
